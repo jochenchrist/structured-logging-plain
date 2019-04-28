@@ -1,0 +1,14 @@
+<configuration>
+  <appender name="classicConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <appender name="jsonConsoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="classicConsoleAppender"/>
+    <appender-ref ref="jsonConsoleAppender"/>
+  </root>
+</configuration>
